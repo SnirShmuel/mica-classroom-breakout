@@ -13,9 +13,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
 		private bool m_Crouch;
-        
+		private Animator animator;
+		private int isWalkingHash;
+		private int isRunningHash;
+		
         private void Start()
         {
+			animator = GetComponent<Animator>();
+			isWalkingHash = Animator.StringToHash("isWalking");
+			isRunningHash = Animator.StringToHash("isRunning");
+			
             // get the transform of the main camera
             if (Camera.main != null)
             {
@@ -35,6 +42,31 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void Update()
         {
+		 bool isRunning = animator.GetBool(isRunningHash);
+			bool isWalking = animator.GetBool(isWalkingHash);
+			bool forwardPressed = Input.GetKey(KeyCode.W);
+			bool runPressed = Input.GetKey(KeyCode.LeftShift);
+
+			if (!isWalking && forwardPressed)
+			{
+				animator.SetBool(isWalkingHash, true);
+			}
+
+			if (isWalking && !forwardPressed)
+			{
+				animator.SetBool(isWalkingHash, false);
+			}
+
+			if(!isRunning && (forwardPressed && runPressed))
+			{
+				animator.SetBool(isRunningHash, true);
+			}
+
+			if (isRunning && (!forwardPressed && !runPressed))
+			{
+				animator.SetBool(isRunningHash, false);
+			}
+			
             if (!m_Jump)
             {
                 m_Jump = Input.GetKeyDown(KeyCode.Space);
