@@ -40,18 +40,19 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		bool isRunning = m_Animator.GetBool("isRunning");
 		bool isWalking = m_Animator.GetBool("isWalking");
 		bool forwardPressed = Input.GetKey(KeyCode.W);
+		bool backwardPressed = Input.GetKey(KeyCode.S);
 		bool runPressed = Input.GetKey(KeyCode.LeftShift);
 		m_Jump = Input.GetKeyDown(KeyCode.Space);
 		m_Crouch = Input.GetKeyDown(KeyCode.C);
 		if (!isWalking && forwardPressed)
 		{
 			m_Animator.SetBool("isWalking", true);
-		}
+		} 
 
 		if (isWalking && !forwardPressed)
 		{
 			m_Animator.SetBool("isWalking", false);
-		}
+		} 
 
 		if(!isRunning && (forwardPressed && runPressed))
 		{
