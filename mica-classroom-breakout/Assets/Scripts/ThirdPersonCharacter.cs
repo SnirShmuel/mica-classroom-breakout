@@ -39,27 +39,44 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 	{
 		bool isRunning = m_Animator.GetBool("isRunning");
 		bool isWalking = m_Animator.GetBool("isWalking");
+		bool isBackward = m_Animator.GetBool("isBackward");
 		bool forwardPressed = Input.GetKey(KeyCode.W);
 		bool backwardPressed = Input.GetKey(KeyCode.S);
 		bool runPressed = Input.GetKey(KeyCode.LeftShift);
 		m_Jump = Input.GetKeyDown(KeyCode.Space);
 		m_Crouch = Input.GetKeyDown(KeyCode.C);
+
+
+		// Check if start walking
 		if (!isWalking && forwardPressed)
 		{
 			m_Animator.SetBool("isWalking", true);
 		} 
 
+		// Check if stop walking
 		if (isWalking && !forwardPressed)
 		{
 			m_Animator.SetBool("isWalking", false);
-		} 
+		}
+
+		// Check if start backward walking
+		if (!isBackward && backwardPressed)
+		{
+			m_Animator.SetBool("isBackward", true);
+		}
+
+		// Check if stop backward walking
+		if (isBackward && !backwardPressed)
+		{
+			m_Animator.SetBool("isBackward", false);
+		}
 
 		if(!isRunning && (forwardPressed && runPressed))
 		{
 			m_Animator.SetBool("isRunning", true);
 		}
 
-		if (isRunning && (!forwardPressed && !runPressed))
+		if (isRunning && (!forwardPressed || !runPressed))
 		{
 			m_Animator.SetBool("isRunning", false);
 		}
@@ -85,6 +102,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			Debug.Log("!!");
             playerVelocity.y = Mathf.Sqrt(jumpHeight * 3.0f * gravity);
         }
+
+
 		playerVelocity.y += -1 * gravity * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
 		
