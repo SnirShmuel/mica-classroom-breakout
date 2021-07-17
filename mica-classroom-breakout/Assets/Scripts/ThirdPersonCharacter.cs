@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
@@ -19,20 +20,20 @@ namespace UnityStandardAssets.Characters.ThirdPerson
     private float gravity = 9.87f;
     private float verticalSpeed = 0;
 
-	    private void Awake()
+	private void Awake()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 	
     private void Start()
     {
+		Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         controller = gameObject.GetComponent<CharacterController>();
 		m_Animator = GetComponent<Animator>();
-		if (Camera.main != null)
-            {
-                m_Cam = Camera.main.transform;
-            }
+		if (Camera.main != null) {
+			m_Cam = Camera.main.transform;
+		}
+		
     }
 	
 	private void Update()
