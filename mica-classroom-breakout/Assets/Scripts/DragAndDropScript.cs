@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class DragAndDropScript : MonoBehaviour
 {
     public GameObject SelectedPiece;
     int OrderInLayer = 1;
-    private bool isFinish = false;
+    public static bool isFinish = false;
 
 
     // Start is called before the first frame update
@@ -24,17 +25,19 @@ public class DragAndDropScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if(hit.transform.CompareTag("Puzzle"))
-            {
-                if (!hit.transform.GetComponent<PuzzleGameScript>().isInRightPosition)
-                {
-                    SelectedPiece = hit.transform.gameObject;
-                    SelectedPiece.GetComponent<PuzzleGameScript>().isSelected = true;
-                    SelectedPiece.GetComponent<SortingGroup>().sortingOrder = OrderInLayer;
-                    OrderInLayer++;
-                }
-                
-            }
+			if (hit) {
+				if(hit.transform.CompareTag("Puzzle"))
+				{
+					if (!hit.transform.GetComponent<PuzzleGameScript>().isInRightPosition)
+					{
+						SelectedPiece = hit.transform.gameObject;
+						SelectedPiece.GetComponent<PuzzleGameScript>().isSelected = true;
+						SelectedPiece.GetComponent<SortingGroup>().sortingOrder = OrderInLayer;
+						OrderInLayer++;
+					}
+					
+				}
+			}
         }
 
         // Drop piece
@@ -61,7 +64,7 @@ public class DragAndDropScript : MonoBehaviour
         // Check win
         if (isFinish)
         {
-            Application.Quit();
+           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
 
@@ -76,6 +79,7 @@ public class DragAndDropScript : MonoBehaviour
             }
         }
 
+		isFinish=true;
         if (isInPlace)
             isFinish = true;
     }
