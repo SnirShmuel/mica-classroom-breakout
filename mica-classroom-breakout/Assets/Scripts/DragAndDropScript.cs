@@ -80,7 +80,6 @@ public class DragAndDropScript : MonoBehaviour
             }
         }
 
-		isFinish=true;
         if (isInPlace)
             isFinish = true;
     }
