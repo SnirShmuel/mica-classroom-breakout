@@ -18,12 +18,12 @@ public class Player : MonoBehaviour {
 
 	void Update() {
 		if(healthManager.IsDead && !isDestroyed) {
-           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+           SceneManager.LoadScene("GameScene");
 		}
 		
 		if (kills >= 10) {
 			isFinish = true;
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+			SceneManager.LoadScene("GameScene");
 		}
 	}
 

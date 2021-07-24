@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
@@ -20,10 +21,24 @@ namespace UnityStandardAssets.Characters.ThirdPerson
     private float gravity = 9.87f;
     private float verticalSpeed = 0;
 
+	public Text finishedText;
+
 	private void Awake()
     {
     }
 	
+	void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+		if (hit.gameObject.name == "WinningCup") {
+        	if (DragAndDropScript.isFinish && Player.isFinish) {
+				SceneManager.LoadScene("WinMenuScene");
+			} else {
+				finishedText.text = "Return when everything was finished!";
+			}
+		}
+    }
+
+
     private void Start()
     {
 		Cursor.lockState = CursorLockMode.Locked;

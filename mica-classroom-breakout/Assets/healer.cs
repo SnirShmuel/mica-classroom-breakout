@@ -9,6 +9,6 @@ public class healer : MonoBehaviour
         HealthManager hm = other.gameObject.GetComponent<HealthManager>();
         if (hm) {
             hm.Heal();
-        }    
+        }  
     }
 }
