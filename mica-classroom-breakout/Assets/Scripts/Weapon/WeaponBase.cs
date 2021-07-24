@@ -15,7 +15,6 @@ public class WeaponBase : MonoBehaviour {
 	public ReloadType reloadType;
 	public CrosshairType crosshairType;
 	public FireMode fireMode;
-	public float damage = 17f;
 	public float fireRate = 0.1f;
 	public float range = 100f;
 	public int bulletsPerMag = 30;
@@ -26,7 +25,6 @@ public class WeaponBase : MonoBehaviour {
 	public float spread;
 	public float bulletEjectingSpeed = 5.0f;
 	public bool hasLastFire = false;
-	public float recoil = 0f;
 
 	[Header("UI Refs")]
 	public Text weaponNameText;
@@ -56,28 +54,6 @@ public class WeaponBase : MonoBehaviour {
 	public Transform caseSpawnPoint;
 	public ParticleSystem muzzleflash;
 
-	[Header("Weapon Upgrades")]
-	public float upgradeDamageFactor = 1;
-	public int upgradeDamage = 0;
-
-	public float upgradeMagFactor = 1;
-	public int upgradeMag = 0;
-
-	public float upgradeMaxAmmoFactor = 1;
-	public int upgradeMaxAmmo = 0;
-
-	public float upgradeRangeFactor = 1;
-	public int upgradeRange = 0;
-
-	public float upgradeRecoilFactor = 1;
-	public int upgradeRecoil = 0;
-
-	public float upgradeReloadFactor = 1;
-	public int upgradeReload = 0;
-
-	public float upgradeSteadyFactor = 1;
-	public int upgradeSteady = 0;
-
 	private Animator animator;
 	private float fireTimer;
 	private bool isReloading = false;
@@ -105,17 +81,6 @@ public class WeaponBase : MonoBehaviour {
 			isEnabled = value;
 		}
 	}
-
-	public void RecalculateMagSize() {
-		float extraLoads = upgradeMag * upgradeMagFactor;
-		bulletsPerMag = bulletsPerMag + (int) extraLoads;
-	}
-
-	public void RecalculateMaxAmmo() {
-		float extraAmmo = upgradeMaxAmmo * upgradeMaxAmmoFactor;
-		startBullets = startBullets + (int) extraAmmo;
-	}
-
 
 	void Start() {
 		animator = GetComponent<Animator>();
@@ -156,8 +121,7 @@ public class WeaponBase : MonoBehaviour {
 
 		AdjustAimingSights();
 
-		float reloadSpeed = 1 + (upgradeReload * upgradeReloadFactor);
-		animator.SetFloat("ReloadSpeed", reloadSpeed);
+		animator.SetFloat("ReloadSpeed", 1f);
 	}
 
 	void DrawHitRay() {
@@ -177,11 +141,6 @@ public class WeaponBase : MonoBehaviour {
 		isEnabled = true;
 
 		yield break;
-	}
-
-	float GetWeaponDamage() {
-		float extraDamage = upgradeDamageFactor * (float) upgradeDamage;
-		return extraDamage + damage;
 	}
 
 	void Fire() {
@@ -205,7 +164,7 @@ public class WeaponBase : MonoBehaviour {
 				}
 
 				if(health) {
-					health.ApplyDamage(GetWeaponDamage());
+					health.ApplyDamage(17f);
 
 					if(health.IsDead) {
 						// Check it was head
@@ -243,7 +202,8 @@ public class WeaponBase : MonoBehaviour {
 		GameObject gunSmokeEffect = Instantiate(gunSmoke, muzzlePoint.position, muzzlePoint.rotation);
 		Destroy(gunSmokeEffect, 5f);
 
-		GiveRecoil();
+		// recoil
+		controller.mouseLook.StartRecoil(0.2f);
 
 		muzzleflash.Play();
 		soundManager.Play(gunFireSound);
@@ -252,17 +212,6 @@ public class WeaponBase : MonoBehaviour {
 		UpdateAmmoText();
 
 		fireTimer = 0.0f;
-	}
-
-	void GiveRecoil() {
-		float baseRecoil = recoil;
-		float calcRecoil = baseRecoil - (upgradeRecoil * upgradeRecoilFactor);
-
-		if(calcRecoil <= 0) {
-			calcRecoil = 0f;
-		}
-
-		controller.mouseLook.StartRecoil(calcRecoil);
 	}
 
 	void CreateRicochet(Vector3 pos, Vector3 normal) {

@@ -13107,7 +13107,6 @@ MonoBehaviour:
   reloadType: 0
   crosshairType: 0
   fireMode: 0
-  damage: 47
   fireRate: 0.13
   range: 500
   bulletsPerMag: 30
@@ -13118,7 +13117,6 @@ MonoBehaviour:
   spread: 0.9
   bulletEjectingSpeed: 5
   hasLastFire: 0
-  recoil: 0.65
   weaponNameText: {fileID: 0}
   weaponAmmoText: {fileID: 0}
   aimPos: {x: 0, y: -1.85, z: -0.5}
@@ -13135,20 +13133,6 @@ MonoBehaviour:
   muzzlePoint: {fileID: 4525811896885516}
   caseSpawnPoint: {fileID: 4830162236653774}
   muzzleflash: {fileID: 198981296993964598}
-  upgradeDamageFactor: 12
-  upgradeDamage: 0
-  upgradeMagFactor: 1.25
-  upgradeMag: 0
-  upgradeMaxAmmoFactor: 3
-  upgradeMaxAmmo: 0
-  upgradeRangeFactor: 1
-  upgradeRange: 0
-  upgradeRecoilFactor: 0.01
-  upgradeRecoil: 0
-  upgradeReloadFactor: 0.15
-  upgradeReload: 0
-  upgradeSteadyFactor: 1
-  upgradeSteady: 0
 --- !u!114 &114050436376901338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13521,6 +13505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63de2a3da14407644be76d3afeae9280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kills: 0
 --- !u!114 &114848029049577530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20666,7 +20651,6 @@ MonoBehaviour:
   reloadType: 0
   crosshairType: 0
   fireMode: 1
-  damage: 15
   fireRate: 0.15
   range: 100
   bulletsPerMag: 15
@@ -20677,7 +20661,6 @@ MonoBehaviour:
   spread: 0.7
   bulletEjectingSpeed: 5
   hasLastFire: 1
-  recoil: 0.5
   weaponNameText: {fileID: 0}
   weaponAmmoText: {fileID: 0}
   aimPos: {x: 0.11, y: -2.07, z: -0.61}
@@ -20694,20 +20677,6 @@ MonoBehaviour:
   muzzlePoint: {fileID: 4917891615988968}
   caseSpawnPoint: {fileID: 4119855069954184}
   muzzleflash: {fileID: 198703264108749566}
-  upgradeDamageFactor: 6
-  upgradeDamage: 0
-  upgradeMagFactor: 1
-  upgradeMag: 0
-  upgradeMaxAmmoFactor: 8
-  upgradeMaxAmmo: 0
-  upgradeRangeFactor: 1
-  upgradeRange: 0
-  upgradeRecoilFactor: 0.01
-  upgradeRecoil: 0
-  upgradeReloadFactor: 0.5
-  upgradeReload: 0
-  upgradeSteadyFactor: 1
-  upgradeSteady: 0
 --- !u!114 &114731072736003746
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemySpawner : MonoBehaviour {
 	
 	[Header("Enemy Spawn Management")]
-	public float respawnDuration = 5.0f;
+	public float respawnDuration = 10.0f;
 	public List<GameObject> spawnPoints = new List<GameObject>();
 	public GameObject target;
 	
@@ -14,10 +14,6 @@ public class EnemySpawner : MonoBehaviour {
 	public float startHealth = 100f;
 	public float startMoveSpeed = 1f;
 	public float startDamage = 15f;
-	public int startEXP = 3;
-	public int growthEXP = 3;
-	public int startFund = 5;
-	public int growthFund = 5;
 
 	public float upgradeDuration = 60f;	// Increase all enemy stats every 30 seconds
 
@@ -28,10 +24,6 @@ public class EnemySpawner : MonoBehaviour {
 	private float currentMoveSpeed;
 	[SerializeField]
 	private float currentDamage;
-	[SerializeField]
-	private int currentEXP;
-	[SerializeField]
-	private int currentFund;
 
 	private GameManager gameManager = null;
 	
@@ -45,8 +37,6 @@ public class EnemySpawner : MonoBehaviour {
 		currentHealth = startHealth;
 		currentMoveSpeed = startMoveSpeed;
 		currentDamage = startDamage;
-		currentEXP = startEXP;
-		currentFund = startFund;
 
 		prefabManager = PrefabManager.GetInstance();
 		enemies.Add(prefabManager.GetPrefab("Zombie"));
@@ -60,13 +50,6 @@ public class EnemySpawner : MonoBehaviour {
 		}
 		else {
 			SpawnEnemy();
-		}
-
-		if(upgradeTimer < upgradeDuration) {
-			upgradeTimer += Time.deltaTime;
-		}
-		else {
-			UpgradeEnemy();
 		}
 	}
 
@@ -89,28 +72,9 @@ public class EnemySpawner : MonoBehaviour {
 			rotateSpeed = Mathf.Max(rotateSpeed, 200f);	// Max 200f
 			zombie.GetComponent<NavMeshAgent>().angularSpeed = rotateSpeed;
 
-			// PhotonNetwork.Instantiate("Zombie", spawnPoint.transform.position, spawnPoint.transform.rotation, 0);
 			Instantiate(zombie, spawnPoint.transform.position, spawnPoint.transform.rotation);
 		}
 		
 		spawnTimer = 0f;
-	}
-
-	void UpgradeEnemy() {
-		print("ENEMY UPGRADED");
-
-		currentHealth += 5;
-
-		if(currentMoveSpeed < 4f) {
-			currentMoveSpeed += 0.2f;
-		}
-		if(currentDamage < 51f) {
-			currentDamage += 2f;
-		}
-		
-		currentEXP += growthEXP;
-		currentFund += growthFund;
-
-		upgradeTimer = 0;
 	}
 }
