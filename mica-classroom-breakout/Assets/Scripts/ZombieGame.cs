@@ -18,6 +18,7 @@ public class ZombieGame : MonoBehaviour
 	private void OnTriggerEnter(Collider other) {
 		if (! Player.isFinish) {
 			audioSource.PlayOneShot(startSound);
+			PlayerPrefs.SetFloat("Timer", TimerScript.currentTime);
 			SceneManager.LoadScene("SurvivalGameScene");
 		} else {
 			audioSource.PlayOneShot(finishedSound);

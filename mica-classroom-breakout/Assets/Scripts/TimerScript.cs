@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class TimerScript : MonoBehaviour
 {
-    float currentTime;
+    static public float currentTime;
     public int startMinutes;
     public TextMeshProUGUI currentTimeText;
     bool isTimerOver = false;
@@ -15,7 +15,7 @@ public class TimerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentTime = startMinutes * 60;
+        currentTime = PlayerPrefs.GetFloat("Timer", startMinutes * 60);
     }
 
     // Update is called once per frame

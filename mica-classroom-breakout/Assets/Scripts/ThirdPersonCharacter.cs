@@ -36,6 +36,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				finishedText.text = "Return when everything was finished!";
 			}
 		}
+
+		if (hit.gameObject.name == "Goblin_rouge_b") {
+			transform.position = new Vector3(0,0.5f,-11);
+		}
     }
 
 

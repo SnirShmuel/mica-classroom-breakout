@@ -21,7 +21,7 @@ public class Player : MonoBehaviour {
            SceneManager.LoadScene("GameScene");
 		}
 		
-		if (kills >= 10) {
+		if (kills >= 1) {
 			isFinish = true;
 			SceneManager.LoadScene("GameScene");
 		}
