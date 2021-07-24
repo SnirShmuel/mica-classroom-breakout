@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 710985914}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -730,6 +730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1001 &64305587
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -797,6 +798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1001 &65914669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -864,6 +866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1001 &67734350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1180,6 +1183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1001 &74159125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1459,6 +1463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1001 &94544336
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2379,6 +2384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1001 &155066266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5775,6 +5781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1 &502557445
 GameObject:
   m_ObjectHideFlags: 0
@@ -6735,6 +6742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1001 &611037892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9046,6 +9054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1001 &824619102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10855,6 +10864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!4 &938104210 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2b127815fd0f2074eae3a0c6a4786d0b, type: 3}
@@ -10985,6 +10995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1001 &973621580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11595,6 +11606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1001 &1001013662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11761,6 +11773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1001 &1017563052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12496,7 +12509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000015258789}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -890, y: -404}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1078536738
@@ -12566,6 +12579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1001 &1081804107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13348,6 +13362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1 &1152473611
 GameObject:
   m_ObjectHideFlags: 0
@@ -16401,6 +16416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1001 &1444751893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16686,6 +16702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1001 &1485504262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16946,7 +16963,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -18931,6 +18948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!4 &1653659749 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2b127815fd0f2074eae3a0c6a4786d0b, type: 3}
@@ -19219,6 +19237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1001 &1669852545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21772,6 +21791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1001 &1879521172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24257,6 +24277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1 &2075773827
 GameObject:
   m_ObjectHideFlags: 0
@@ -25095,6 +25116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dcec66926645247a686387a17f4e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 50
 --- !u!1001 &2129652664
 PrefabInstance:
   m_ObjectHideFlags: 0

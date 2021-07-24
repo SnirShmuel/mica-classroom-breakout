@@ -30,7 +30,7 @@ public class TimerScript : MonoBehaviour
         if (currentTime <= 0)
         {
             isTimerOver = true;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene("LoseMenuScene");
         }
     }
 }
