@@ -9820,7 +9820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb696968314d3bb4b8c160f26901486e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMinutes: 10
+  startMinutes: 1
   currentTimeText: {fileID: 1852358824}
 --- !u!4 &1495380149 stripped
 Transform:
