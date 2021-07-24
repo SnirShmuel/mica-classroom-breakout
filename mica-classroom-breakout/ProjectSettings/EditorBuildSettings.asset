@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SurvivalGameScene.unity
     guid: 383d27a3540439f45b7852cebfec14c7
+  - enabled: 1
+    path: Assets/Scenes/PuzzleScene.unity
+    guid: d66770445b00e6347b961d1885f6f689
   m_configObjects: {}

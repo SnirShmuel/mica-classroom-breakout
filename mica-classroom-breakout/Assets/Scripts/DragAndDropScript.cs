@@ -65,7 +65,7 @@ public class DragAndDropScript : MonoBehaviour
         // Check win
         if (isFinish)
         {
-           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+           SceneManager.LoadScene("GameScene");
         }
     }
 
