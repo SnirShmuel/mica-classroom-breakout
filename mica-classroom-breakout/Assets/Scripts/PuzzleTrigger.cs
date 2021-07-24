@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PuzzleTrigger : MonoBehaviour
 {
-	private bool finished = false;
+	public Text finishedText;
 
 	private void OnTriggerEnter(Collider other) {
 		if (! DragAndDropScript.isFinish) {
 			SceneManager.LoadScene("PuzzleScene");
 		} else {
-			Debug.Log("Puzzle was finished");
+			finishedText.text = "FINISHED PUZZLE";
 		}
+	}
+
+	private void OnTriggerExit(Collider other) {
+		finishedText.text = "";
 	}
 }
