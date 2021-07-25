@@ -22,7 +22,7 @@ public class ZombieGame : MonoBehaviour
 			SceneManager.LoadScene("SurvivalGameScene");
 		} else {
 			audioSource.PlayOneShot(finishedSound);
-			finishedText.text = "FINISHED ZOMBIES ARCADE";
+			finishedText.text = "Zombie arcade is finished";
 		}
 	}
 

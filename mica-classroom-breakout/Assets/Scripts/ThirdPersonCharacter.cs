@@ -33,17 +33,24 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         	if (DragAndDropScript.isFinish && Player.isFinish) {
 				SceneManager.LoadScene("WinMenuScene");
 			} else {
-				finishedText.text = "Return when everything was finished!";
+				finishedText.text = "Return when everything is finished!";
 			}
 		}
+           
 
 		if (hit.gameObject.name == "Goblin_rouge_b") {
 			transform.position = new Vector3(0,0.5f,-11);
 		}
+
+		//if(hit.gameObject.name != "WinningCup" && hit.gameObject.name != "Goblin_rouge_b")
+  //          {
+		//		finishedText.text = "";
+  //          }
     }
 
 
-    private void Start()
+
+	private void Start()
     {
 		Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

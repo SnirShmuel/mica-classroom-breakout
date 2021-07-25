@@ -13,7 +13,7 @@ public class PuzzleTrigger : MonoBehaviour
 			PlayerPrefs.SetFloat("Timer", TimerScript.currentTime);
 			SceneManager.LoadScene("PuzzleScene");
 		} else {
-			finishedText.text = "FINISHED PUZZLE";
+			finishedText.text = "Puzzle DONE!";
 		}
 	}
 
