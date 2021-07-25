@@ -1048,16 +1048,9 @@ MonoBehaviour:
   startHealth: 100
   startMoveSpeed: 1
   startDamage: 15
-  startEXP: 3
-  growthEXP: 3
-  startFund: 25
-  growthFund: 5
-  upgradeDuration: 50
   currentHealth: 0
   currentMoveSpeed: 0
   currentDamage: 0
-  currentEXP: 0
-  currentFund: 0
 --- !u!1001 &71722594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21067,6 +21060,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b3db29cd0bef1aa4ba35b6410cc7a530, type: 3}
   m_PrefabInstance: {fileID: 1813499833}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1813499837
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813499834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.29, y: 0.13, z: 0.31}
+  m_Center: {x: -3.7618715e-17, y: 0.026463037, z: -7.0511694e-17}
 --- !u!1001 &1815470520
 PrefabInstance:
   m_ObjectHideFlags: 0

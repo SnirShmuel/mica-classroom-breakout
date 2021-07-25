@@ -8760,8 +8760,7 @@ PrefabInstance:
       value: 127
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 5864813614099956812, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-    - {fileID: 6319175587566684923, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
 --- !u!4 &734609435 stripped
 Transform:
@@ -10005,8 +10004,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
+  m_Convex: 1
+  m_CookingOptions: 2147483647
   m_Mesh: {fileID: 4300004, guid: f643039ba3e50ba46873c73d521b0473, type: 3}
 --- !u!122 &1337067298
 Halo:

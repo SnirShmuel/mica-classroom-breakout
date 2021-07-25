@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PuzzleScene.unity
     guid: d66770445b00e6347b961d1885f6f689
+  - enabled: 1
+    path: Assets/Scenes/WinMenuScene.unity
+    guid: f6cbfc83ba6d0c644a58608503f9454f
   m_configObjects: {}
