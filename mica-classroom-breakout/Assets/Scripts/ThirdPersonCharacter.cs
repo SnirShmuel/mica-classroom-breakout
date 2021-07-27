@@ -42,11 +42,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			transform.position = new Vector3(0,0.5f,-11);
 		}
 
-		//if(hit.gameObject.name != "WinningCup" && hit.gameObject.name != "Goblin_rouge_b")
-  //          {
-		//		finishedText.text = "";
-  //          }
-    }
+            //if (hit.gameObject.name != "WinningCup" && hit.gameObject.name != "Goblin_rouge_b")
+            //{
+            //    finishedText.text = "";
+            //}
+        }
+
 
 
 
