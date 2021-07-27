@@ -141,7 +141,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             if (m_Jump && controller.isGrounded)
             {
-                Debug.Log("!!");
                 playerVelocity.y = Mathf.Sqrt(jumpHeight * 3.0f * gravity);
             }
 

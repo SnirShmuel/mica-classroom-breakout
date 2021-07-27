@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class WinMenuScript : MonoBehaviour
 {
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+
     public void QuitGame()
     {
-        Debug.Log("quit");
         Application.Quit();
     }
 }
